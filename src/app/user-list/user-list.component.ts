@@ -7,6 +7,7 @@ import {User} from "../model/user";
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  public users: User[] = usersData;
 
   constructor() { }
 
@@ -16,5 +17,11 @@ export class UserListComponent implements OnInit {
     return new Array(i);
   }
 
-  users: User[] = usersData;
+  Delete(user:User) {
+    let i = this.users.indexOf(user)
+    if (i!=-1) {
+      this.users.splice(i,1);
+    }
+  }
+
 }
