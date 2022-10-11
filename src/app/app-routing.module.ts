@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
-import {HomeComponent} from "./home/home.component";
-import {ListProductComponent} from "./list-product/list-product.component";
-import {UserListComponent} from "./user-list/user-list.component";
-import {ContactComponent} from "./contact/contact.component";
-import {NotFoundComponent} from "./not-found/not-found.component";
+import {HomeComponent} from "./pages/home/home.component";
+import {ListProductComponent} from "./products/list-product/list-product.component";
+import {UserListComponent} from "./users/user-list/user-list.component";
+import {ContactComponent} from "./pages/contact/contact.component";
+import {NotFoundComponent} from "./pages/not-found/not-found.component";
 
 const ROUTES: Routes = [
   {path:'', redirectTo:'/home', pathMatch: 'full'},
   {path:'index', redirectTo:'/home', pathMatch: 'full'},
   {path:'home', component:HomeComponent},
-  {path:'product', component:ListProductComponent},
-  {path:'user', component:UserListComponent},
   {path:'contact', component:ContactComponent},
+  { path: 'product', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
+  { path: 'user', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
   {path:'**', component:NotFoundComponent},
 ]
 
