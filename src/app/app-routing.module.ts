@@ -8,6 +8,8 @@ import {ContactComponent} from "./contact/contact.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 
 const ROUTES: Routes = [
+  {path:'', redirectTo:'/home', pathMatch: 'full'},
+  {path:'index', redirectTo:'/home', pathMatch: 'full'},
   {path:'home', component:HomeComponent},
   {path:'product', component:ListProductComponent},
   {path:'user', component:UserListComponent},
