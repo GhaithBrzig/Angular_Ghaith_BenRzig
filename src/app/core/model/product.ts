@@ -1,9 +1,10 @@
- export class Product {
+export class Product{
   id: number;
-  name: String
-  price:number
-  quantity: number
-  nbrlike: number
-  picture: String
-  description: String
+  name: String;
+  price: number;
+  quantity: number;
+  nbrlike: number;
+  picture: String;
+  description: String;
+  category: String
 }
