@@ -6,5 +6,6 @@ export class User {
   email:String
   address:String
   picture:String
+  gender:String
 
 }
