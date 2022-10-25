@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import usersData from '../../users.json';
 import {User} from "../../core/model/user";
+import {StatsService} from "../../core/services/stats.service";
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -23,5 +24,6 @@ export class UserListComponent implements OnInit {
       this.users.splice(i,1);
     }
   }
+
 
 }

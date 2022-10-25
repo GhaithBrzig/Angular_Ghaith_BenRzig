@@ -1,0 +1,31 @@
+<h1>List products out of stock :</h1>
+<table class="table">
+<thead>
+<tr>
+  <th>id</th>
+  <th>name</th>
+  <th>quantity</th>
+  <th>price</th>
+  <th>category</th>
+  <th>action</th>
+
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let p of list ">
+  <td>{{p.id}}</td>
+  <td>{{p.name}}</td>
+  <td style="color: red;">{{p.quantity}}</td>
+  <td>{{p.price}}</td>
+  <td>{{p.category}}</td>
+  <td>
+    <button class="btn btn-sm btn-danger" (click)="delete(p)"><i class="fa fa-trash-o" aria-hidden="true"></i>
+    </button>
+    &nbsp;
+    <button class="btn btn-sm btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </button>
+  </td>
+
+</tr>
+</tbody>
+</table>
